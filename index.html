@@ -3,99 +3,149 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mayur — Portfolio</title>
-<meta name="description" content="Portfolio of Mayur — projects, skills and contact.">
+<title>Mayur — Video Editor</title>
+<meta name="description" content="Mayur is a video editor: reels, YouTube, ads, motion graphics and color grading.">
 <style>
-:root{--bg:#0b0d12;--card:#141824;--text:#e8ebf2;--muted:#9aa3b5;--accent:#7c8cff;--accent2:#5eead4;--line:#232a3b}
-@media (prefers-color-scheme:light){:root{--bg:#f7f8fb;--card:#fff;--text:#12151d;--muted:#5a6376;--accent:#4f5df0;--accent2:#0d9488;--line:#e3e6ee}}
+:root{--bg:#0a0a0d;--card:#14141a;--text:#f2f2f5;--muted:#9a9aa8;--accent:#ff4d4d;--accent2:#ffb14d;--line:#25252e}
+@media (prefers-color-scheme:light){:root{--bg:#f6f6f8;--card:#fff;--text:#111116;--muted:#5d5d6b;--accent:#e63232;--accent2:#d97706;--line:#e2e2e8}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;backdrop-filter:blur(10px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid var(--line);z-index:10}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:10;backdrop-filter:blur(10px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid var(--line)}
 nav{display:flex;justify-content:space-between;align-items:center;height:60px}
-nav .logo{font-weight:700;letter-spacing:.5px}
+.logo{font-weight:800;letter-spacing:.5px}.logo b{color:var(--accent)}
 nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
-nav ul a{color:var(--muted);font-size:.95rem}
-nav ul a:hover{color:var(--text)}
-.hero{padding:110px 0 80px}
-.hero small{color:var(--accent2);font-weight:600;letter-spacing:1px;text-transform:uppercase}
-.hero h1{font-size:clamp(2.4rem,7vw,4.4rem);line-height:1.1;margin:.3em 0}
+nav ul a{color:var(--muted);font-size:.95rem}nav ul a:hover{color:var(--text)}
+.hero{padding:90px 0 50px;text-align:center}
+.rec{display:inline-flex;align-items:center;gap:8px;color:var(--muted);font-size:.85rem;letter-spacing:2px;text-transform:uppercase}
+.rec i{width:9px;height:9px;border-radius:50%;background:var(--accent);animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.2}}
+.hero h1{font-size:clamp(2.4rem,7vw,4.6rem);line-height:1.08;margin:.3em 0}
 .hero h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{max-width:560px;color:var(--muted);font-size:1.1rem}
-.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.btn{padding:11px 22px;border-radius:10px;font-weight:600;border:1px solid var(--line)}
+.hero p{max-width:580px;margin:0 auto;color:var(--muted);font-size:1.1rem}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.btn{padding:11px 24px;border-radius:10px;font-weight:600;border:1px solid var(--line);transition:.2s;display:inline-block}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-.btn:hover{transform:translateY(-2px);transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.reel{margin-top:44px;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000;border:1px solid var(--line);position:relative}
+.reel iframe,.reel video{width:100%;height:100%;border:0;display:block}
+.reel .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#ccc;background:radial-gradient(circle at 30% 20%,#3a1414,#0a0a0d 70%);padding:20px}
+.play{width:74px;height:74px;border-radius:50%;background:var(--accent);display:grid;place-items:center;margin:0 auto 14px}
+.play:after{content:"";border-left:22px solid #fff;border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px}
 section{padding:70px 0}
-h2{font-size:1.9rem;margin:0 0 28px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;transition:.2s}
-.card:hover{transform:translateY(-4px);border-color:var(--accent)}
-.card .thumb{height:140px;border-radius:10px;margin-bottom:16px;background:linear-gradient(135deg,var(--accent),var(--accent2));opacity:.85}
-.card h3{margin:0 0 6px}
-.card p{margin:0 0 12px;color:var(--muted);font-size:.95rem}
-.tags{display:flex;gap:6px;flex-wrap:wrap}
-.tags span,.skills span{font-size:.8rem;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
-.skills{display:flex;gap:10px;flex-wrap:wrap}
-.skills span{font-size:.95rem;padding:7px 16px}
-.about{display:grid;grid-template-columns:1fr;gap:20px;color:var(--muted);max-width:680px}
-form{display:grid;gap:14px;max-width:520px}
-input,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit}
-input:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
-button{cursor:pointer;font:inherit}
+h2{font-size:1.9rem;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 28px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.filters button{background:none;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:6px 16px;cursor:pointer;font:inherit;font-size:.9rem}
+.filters button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.work{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.2s;cursor:pointer}
+.work:hover{transform:translateY(-4px);border-color:var(--accent)}
+.thumb{aspect-ratio:16/9;position:relative;background:linear-gradient(135deg,#2a1a3a,#4a1a1a)}
+.work:nth-child(3n+2) .thumb{background:linear-gradient(135deg,#0f2a3a,#1a3a2a)}
+.work:nth-child(3n) .thumb{background:linear-gradient(135deg,#3a2a0f,#3a1a2a)}
+.thumb:after{content:"";position:absolute;left:50%;top:50%;transform:translate(-40%,-50%);border-left:26px solid rgba(255,255,255,.85);border-top:15px solid transparent;border-bottom:15px solid transparent}
+.thumb em{position:absolute;right:10px;bottom:8px;font-style:normal;font-size:.75rem;background:rgba(0,0,0,.7);color:#fff;padding:2px 8px;border-radius:6px}
+.work .info{padding:16px 18px}
+.work h3{margin:0 0 2px;font-size:1.05rem}
+.work p{margin:0;color:var(--muted);font-size:.9rem}
+.work.hide{display:none}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.svc h3{margin:0 0 6px;font-size:1.05rem}.svc p{margin:0;color:var(--muted);font-size:.93rem}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chips span{padding:7px 16px;border:1px solid var(--line);border-radius:99px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;counter-reset:s}
+.step{border-left:2px solid var(--accent);padding-left:16px;counter-increment:s}
+.step:before{content:"0" counter(s);color:var(--accent);font-weight:700}
+.step h3{margin:2px 0 4px;font-size:1rem}.step p{margin:0;color:var(--muted);font-size:.92rem}
+form{display:grid;gap:14px;max-width:540px}
+input,select,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+button.btn{cursor:pointer;font:inherit;font-weight:600}
+.social{display:flex;gap:18px;margin-top:22px;color:var(--muted)}.social a:hover{color:var(--accent)}
 footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);text-align:center;font-size:.9rem}
-@media(max-width:560px){nav ul{gap:14px}.hero{padding:70px 0 50px}}
+@media(max-width:600px){nav ul{gap:12px;font-size:.9rem}.hero{padding:60px 0 30px}}
 </style>
 </head>
 <body>
 <header><div class="wrap"><nav>
-  <a class="logo" href="#top">Mayur</a>
-  <ul><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul>
+  <a class="logo" href="#top">MAYUR<b>.</b></a>
+  <ul><li><a href="#work">Work</a></li><li><a href="#services">Services</a></li><li><a href="#process">Process</a></li><li><a href="#contact">Contact</a></li></ul>
 </nav></div></header>
 
 <main id="top">
 <div class="wrap hero">
-  <small>Hello, I'm</small>
-  <h1>Mayur — I build <span>things people enjoy using.</span></h1>
-  <p>Developer &amp; creator focused on clean design, motion and useful products. Replace this line with your own tagline.</p>
-  <div class="btns"><a class="btn primary" href="#projects">View my work</a><a class="btn" href="#contact">Get in touch</a></div>
+  <span class="rec"><i></i> Video Editor</span>
+  <h1>I turn raw footage into <span>stories that hold attention.</span></h1>
+  <p>Reels, YouTube, ads, and motion graphics — paced, graded and sound-designed to keep viewers watching.</p>
+  <div class="btns"><a class="btn primary" href="#work">Watch my work</a><a class="btn" href="#contact">Hire me</a></div>
+
+  <!-- SHOWREEL: replace the placeholder div with a YouTube/Vimeo iframe or <video src="reel.mp4" controls> -->
+  <div class="reel"><div class="ph"><div><div class="play"></div>Showreel 2026<br><small>Add your reel here</small></div></div></div>
 </div>
 
-<section id="about"><div class="wrap">
-  <h2>About</h2>
-  <div class="about">
-    <p>Write a short intro here: who you are, what you do, and what you're passionate about. Mention your experience, education, or the kind of work you're looking for.</p>
+<section id="work"><div class="wrap">
+  <h2>Selected Work</h2>
+  <p class="sub">A mix of short-form and long-form edits. Click a card to open the video (add your links in the HTML).</p>
+  <div class="filters" id="filters">
+    <button class="on" data-f="all">All</button><button data-f="reels">Reels / Shorts</button><button data-f="youtube">YouTube</button><button data-f="ads">Ads</button><button data-f="motion">Motion</button>
+  </div>
+  <div class="grid" id="grid">
+    <a class="work" data-c="reels" href="#"><div class="thumb"><em>0:30</em></div><div class="info"><h3>Fitness Brand Reel</h3><p>Fast cuts, beat sync, captions</p></div></a>
+    <a class="work" data-c="youtube" href="#"><div class="thumb"><em>12:40</em></div><div class="info"><h3>Travel Vlog — Goa</h3><p>Storytelling edit, color grade, music</p></div></a>
+    <a class="work" data-c="ads" href="#"><div class="thumb"><em>0:45</em></div><div class="info"><h3>Product Launch Ad</h3><p>Commercial cut, sound design</p></div></a>
+    <a class="work" data-c="motion" href="motion_magic_particles_v2.html"><div class="thumb"><em>Loop</em></div><div class="info"><h3>Particle Motion Piece</h3><p>Interactive motion experiment</p></div></a>
+    <a class="work" data-c="youtube" href="#"><div class="thumb"><em>8:15</em></div><div class="info"><h3>Podcast Highlights</h3><p>Multi-cam, cleanup, subtitles</p></div></a>
+    <a class="work" data-c="reels" href="#"><div class="thumb"><em>0:20</em></div><div class="info"><h3>Food Shorts Series</h3><p>Vertical edits, transitions</p></div></a>
   </div>
 </div></section>
 
-<section id="projects"><div class="wrap">
-  <h2>Projects</h2>
-  <div class="grid">
-    <a class="card" href="motion_magic_particles_v2.html"><div class="thumb"></div><h3>Motion Magic Particles</h3><p>Interactive particle animation experiment.</p><div class="tags"><span>HTML</span><span>Canvas</span><span>JS</span></div></a>
-    <a class="card" href="#"><div class="thumb"></div><h3>Project Two</h3><p>Short description of what it does and why it matters.</p><div class="tags"><span>React</span><span>Node</span></div></a>
-    <a class="card" href="#"><div class="thumb"></div><h3>Project Three</h3><p>Short description of what it does and why it matters.</p><div class="tags"><span>Design</span><span>UI/UX</span></div></a>
+<section id="services"><div class="wrap">
+  <h2>What I Do</h2><p class="sub">End-to-end post-production.</p>
+  <div class="services">
+    <div class="svc"><h3>Video Editing</h3><p>Story-driven cuts for YouTube, social, ads and events.</p></div>
+    <div class="svc"><h3>Color Grading</h3><p>Consistent, cinematic looks that match your brand.</p></div>
+    <div class="svc"><h3>Motion Graphics</h3><p>Titles, lower thirds, logo animations and captions.</p></div>
+    <div class="svc"><h3>Sound Design</h3><p>Clean dialogue, music mixing and sound effects.</p></div>
   </div>
+  <h2 style="margin-top:50px">Tools</h2>
+  <div class="chips"><span>Premiere Pro</span><span>After Effects</span><span>DaVinci Resolve</span><span>Final Cut Pro</span><span>CapCut</span><span>Audition</span><span>Photoshop</span></div>
 </div></section>
 
-<section id="skills"><div class="wrap">
-  <h2>Skills</h2>
-  <div class="skills"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Node.js</span><span>Git</span><span>Figma</span><span>Motion Design</span></div>
+<section id="process"><div class="wrap">
+  <h2>How I Work</h2><p class="sub">Simple, fast, revision-friendly.</p>
+  <div class="steps">
+    <div class="step"><h3>Brief</h3><p>You share footage, references and goals.</p></div>
+    <div class="step"><h3>Rough Cut</h3><p>Structure, pacing and story locked first.</p></div>
+    <div class="step"><h3>Polish</h3><p>Color, sound, graphics and captions.</p></div>
+    <div class="step"><h3>Deliver</h3><p>Revisions, then final export in any format.</p></div>
+  </div>
 </div></section>
 
 <section id="contact"><div class="wrap">
-  <h2>Contact</h2>
+  <h2>Let's Work Together</h2><p class="sub">Tell me about your project and I'll reply soon.</p>
   <form action="mailto:mangoalphagd@gmail.com" method="post" enctype="text/plain">
     <input name="name" placeholder="Your name" required>
     <input name="email" type="email" placeholder="Your email" required>
-    <textarea name="message" rows="5" placeholder="Message" required></textarea>
+    <select name="type"><option>Reel / Short</option><option>YouTube video</option><option>Ad / Promo</option><option>Motion graphics</option><option>Other</option></select>
+    <textarea name="message" rows="5" placeholder="Project details, length, deadline" required></textarea>
     <button class="btn primary" type="submit">Send message</button>
   </form>
+  <div class="social"><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">LinkedIn</a><a href="#">Behance</a></div>
 </div></section>
 </main>
 
 <footer><div class="wrap">© <span id="y"></span> Mayur. All rights reserved.</div></footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+const btns=document.querySelectorAll('#filters button'),items=document.querySelectorAll('.work');
+btns.forEach(b=>b.onclick=()=>{
+  btns.forEach(x=>x.classList.toggle('on',x===b));
+  items.forEach(i=>i.classList.toggle('hide',b.dataset.f!=='all'&&i.dataset.c!==b.dataset.f));
+});
+</script>
 </body>
 </html>
