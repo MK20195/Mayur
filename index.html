@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mayur — Portfolio</title>
+<meta name="description" content="Portfolio of Mayur — projects, skills and contact.">
+<style>
+:root{--bg:#0b0d12;--card:#141824;--text:#e8ebf2;--muted:#9aa3b5;--accent:#7c8cff;--accent2:#5eead4;--line:#232a3b}
+@media (prefers-color-scheme:light){:root{--bg:#f7f8fb;--card:#fff;--text:#12151d;--muted:#5a6376;--accent:#4f5df0;--accent2:#0d9488;--line:#e3e6ee}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;backdrop-filter:blur(10px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid var(--line);z-index:10}
+nav{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav .logo{font-weight:700;letter-spacing:.5px}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav ul a{color:var(--muted);font-size:.95rem}
+nav ul a:hover{color:var(--text)}
+.hero{padding:110px 0 80px}
+.hero small{color:var(--accent2);font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.hero h1{font-size:clamp(2.4rem,7vw,4.4rem);line-height:1.1;margin:.3em 0}
+.hero h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:560px;color:var(--muted);font-size:1.1rem}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{padding:11px 22px;border-radius:10px;font-weight:600;border:1px solid var(--line)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:hover{transform:translateY(-2px);transition:.2s}
+section{padding:70px 0}
+h2{font-size:1.9rem;margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.card .thumb{height:140px;border-radius:10px;margin-bottom:16px;background:linear-gradient(135deg,var(--accent),var(--accent2));opacity:.85}
+.card h3{margin:0 0 6px}
+.card p{margin:0 0 12px;color:var(--muted);font-size:.95rem}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tags span,.skills span{font-size:.8rem;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+.skills{display:flex;gap:10px;flex-wrap:wrap}
+.skills span{font-size:.95rem;padding:7px 16px}
+.about{display:grid;grid-template-columns:1fr;gap:20px;color:var(--muted);max-width:680px}
+form{display:grid;gap:14px;max-width:520px}
+input,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit}
+input:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+button{cursor:pointer;font:inherit}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);text-align:center;font-size:.9rem}
+@media(max-width:560px){nav ul{gap:14px}.hero{padding:70px 0 50px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="logo" href="#top">Mayur</a>
+  <ul><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul>
+</nav></div></header>
+
+<main id="top">
+<div class="wrap hero">
+  <small>Hello, I'm</small>
+  <h1>Mayur — I build <span>things people enjoy using.</span></h1>
+  <p>Developer &amp; creator focused on clean design, motion and useful products. Replace this line with your own tagline.</p>
+  <div class="btns"><a class="btn primary" href="#projects">View my work</a><a class="btn" href="#contact">Get in touch</a></div>
+</div>
+
+<section id="about"><div class="wrap">
+  <h2>About</h2>
+  <div class="about">
+    <p>Write a short intro here: who you are, what you do, and what you're passionate about. Mention your experience, education, or the kind of work you're looking for.</p>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <div class="grid">
+    <a class="card" href="motion_magic_particles_v2.html"><div class="thumb"></div><h3>Motion Magic Particles</h3><p>Interactive particle animation experiment.</p><div class="tags"><span>HTML</span><span>Canvas</span><span>JS</span></div></a>
+    <a class="card" href="#"><div class="thumb"></div><h3>Project Two</h3><p>Short description of what it does and why it matters.</p><div class="tags"><span>React</span><span>Node</span></div></a>
+    <a class="card" href="#"><div class="thumb"></div><h3>Project Three</h3><p>Short description of what it does and why it matters.</p><div class="tags"><span>Design</span><span>UI/UX</span></div></a>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <div class="skills"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Node.js</span><span>Git</span><span>Figma</span><span>Motion Design</span></div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2>Contact</h2>
+  <form action="mailto:mangoalphagd@gmail.com" method="post" enctype="text/plain">
+    <input name="name" placeholder="Your name" required>
+    <input name="email" type="email" placeholder="Your email" required>
+    <textarea name="message" rows="5" placeholder="Message" required></textarea>
+    <button class="btn primary" type="submit">Send message</button>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="wrap">© <span id="y"></span> Mayur. All rights reserved.</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
